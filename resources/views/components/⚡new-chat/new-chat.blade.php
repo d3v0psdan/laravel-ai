@@ -18,7 +18,8 @@
                 </x-slot>
 
                 <x-slot name="actionsTrailing">
-                    <flux:button size="sm" variant="filled" icon="microphone" />
+                    <!-- To be implemented ... -->
+                    {{-- <flux:button size="sm" variant="filled" icon="microphone" /> --}}
                     <flux:button type="submit" size="sm" variant="primary" icon="paper-airplane" />
                 </x-slot>
             </flux:composer>
@@ -39,7 +40,8 @@
                 </x-slot>
 
                 <x-slot name="actionsTrailing">
-                    <flux:button size="sm" variant="filled" icon="microphone" />
+                    <!-- To be implemented ... -->
+                    {{-- <flux:button size="sm" variant="filled" icon="microphone" /> --}}
                     <flux:button type="submit" size="sm" variant="primary" icon="paper-airplane" />
                 </x-slot>
             </flux:composer>
