@@ -1,7 +1,7 @@
 # Laravel AI
 
 <p align="center">
-    <img src="docs/media/laravel-ai.PNG" alt="Laravel AI Screenshot" width="700">
+    <img src="https://github.com/d3v0psdan/laravel-ai/blob/main/docs/media/laravel-ai.png" alt="Laravel AI Screenshot" width="700">
 </p>
 
 <p align="center">
