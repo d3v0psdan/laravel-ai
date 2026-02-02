@@ -13,8 +13,16 @@
             <flux:composer wire:model="prompt" label="Prompt" label:sr-only placeholder="How can I help you today?">
                 <x-slot name="actionsLeading">
                     <flux:button size="sm" variant="subtle" icon="paper-clip" />
-                    <flux:button size="sm" variant="subtle" icon="slash" />
-                    <flux:button size="sm" variant="subtle" icon="adjustments-horizontal" />
+                    {{-- <flux:button size="sm" variant="subtle" icon="slash" />
+                    <flux:button size="sm" variant="subtle" icon="adjustments-horizontal" /> --}}
+
+                    <flux:select wire:model.live="selectedModel" size="sm" variant="listbox" class="max-w-48" placeholder="Select a model...">
+                        @foreach ($this->availableModels as $model)
+                            <flux:select.option value="{{ $model['api_name'] }}">
+                                {{ $model['name'] }}
+                            </flux:select.option>
+                        @endforeach
+                    </flux:select>
                 </x-slot>
 
                 <x-slot name="actionsTrailing">
@@ -35,8 +43,16 @@
             <flux:composer wire:model="prompt" label="Prompt" label:sr-only placeholder="How can I help you today?">
                 <x-slot name="actionsLeading">
                     <flux:button size="sm" variant="subtle" icon="paper-clip" />
-                    <flux:button size="sm" variant="subtle" icon="slash" />
-                    <flux:button size="sm" variant="subtle" icon="adjustments-horizontal" />
+                    {{-- <flux:button size="sm" variant="subtle" icon="slash" /> --}}
+                    {{-- <flux:button size="sm" variant="subtle" icon="adjustments-horizontal" /> --}}
+                    
+                    <flux:select wire:model.live="selectedModel" size="sm" variant="listbox" class="max-w-48" placeholder="Select a model...">
+                        @foreach ($this->availableModels as $model)
+                            <flux:select.option value="{{ $model['api_name'] }}">
+                                {{ $model['name'] }}
+                            </flux:select.option>
+                        @endforeach
+                    </flux:select>
                 </x-slot>
 
                 <x-slot name="actionsTrailing">
