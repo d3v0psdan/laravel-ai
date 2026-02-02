@@ -12,8 +12,24 @@
 
             <flux:sidebar.nav>
                 <flux:sidebar.group :heading="__('Platform')" class="grid">
-                    <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                    <!-- Dashboard -->
+                    <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate.hover>
                         {{ __('Dashboard') }}
+                    </flux:sidebar.item>
+
+                    <!-- New Chat -->
+                    <flux:sidebar.item icon="pencil-square" class="mt-2" :href="route('new-chat')" :current="request()->routeIs('new-chat')" wire:navigate.hover>
+                        {{ __('New Chat') }}
+                    </flux:sidebar.item>
+
+                    <!-- Chats -->
+                    <flux:sidebar.item icon="chat-bubble-left-right" class="mt-2" :href="route('chats')" :current="request()->routeIs('chats')" wire:navigate.hover>
+                        {{ __('Chats') }}
+                    </flux:sidebar.item>
+
+                    <!-- Projects -->
+                    <flux:sidebar.item icon="folder-open" class="mt-2" :href="route('projects')" :current="request()->routeIs('projects')" wire:navigate.hover>
+                        {{ __('Projects') }}
                     </flux:sidebar.item>
                 </flux:sidebar.group>
             </flux:sidebar.nav>
