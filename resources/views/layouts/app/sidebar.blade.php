@@ -4,33 +4,36 @@
         @include('partials.head')
     </head>
     <body class="min-h-screen bg-white dark:bg-zinc-800">
-        <flux:sidebar sticky collapsible="mobile" class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
+        <flux:sidebar sticky collapsible class="bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-700">
             <flux:sidebar.header>
-                <x-app-logo :sidebar="true" href="{{ route('dashboard') }}" wire:navigate />
-                <flux:sidebar.collapse class="lg:hidden" />
+                <flux:sidebar.brand
+                    href="#"
+                    logo="{{ asset('images/laravel-ai.svg') }}"
+                    logo:dark="{{ asset('images/laravel-ai.svg') }}"
+                    name="{{ config('app.name') }}"
+                />
+                <flux:sidebar.collapse class="in-data-flux-sidebar-on-desktop:not-in-data-flux-sidebar-collapsed-desktop:-mr-2" />
             </flux:sidebar.header>
-
+            
             <flux:sidebar.nav>
-                <flux:sidebar.group :heading="__('Platform')" class="grid">
-                    <!-- Dashboard -->
-                    <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate.hover>
-                        {{ __('Dashboard') }}
-                    </flux:sidebar.item>
+                <!-- Dashboard -->
+                <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate.hover class="icon-anim-bounce">
+                    Dashboard
+                </flux:sidebar.item>
 
-                    <!-- New Chat -->
-                    <flux:sidebar.item icon="pencil-square" class="mt-2" :href="route('new-chat')" :current="request()->routeIs('new-chat')" wire:navigate.hover>
-                        {{ __('New Chat') }}
-                    </flux:sidebar.item>
+                <!-- New Chat -->
+                <flux:sidebar.item icon="pencil-square" :href="route('new-chat')" :current="request()->routeIs('new-chat')" wire:navigate.hover class="icon-anim-wiggle">
+                    New Chat
+                </flux:sidebar.item>
 
-                    <!-- Chats -->
-                    <flux:sidebar.item icon="chat-bubble-left-right" class="mt-2" :href="route('chats')" :current="request()->routeIs('chats')" wire:navigate.hover>
-                        {{ __('Chats') }}
-                    </flux:sidebar.item>
+                <!-- Chats -->
+                <flux:sidebar.group expandable icon="chat-bubble-left-right" heading="Chats" class="grid icon-anim-tilt">
+                    <flux:sidebar.item href="#">My Example Chat</flux:sidebar.item>
+                </flux:sidebar.group>
 
-                    <!-- Projects -->
-                    <flux:sidebar.item icon="folder-open" class="mt-2" :href="route('projects')" :current="request()->routeIs('projects')" wire:navigate.hover>
-                        {{ __('Projects') }}
-                    </flux:sidebar.item>
+                <!-- Projects -->
+                <flux:sidebar.group expandable icon="folder-open" heading="Projects" class="grid icon-anim-tilt">
+                    <flux:sidebar.item icon="plus" href="#">New Project</flux:sidebar.item>
                 </flux:sidebar.group>
             </flux:sidebar.nav>
 

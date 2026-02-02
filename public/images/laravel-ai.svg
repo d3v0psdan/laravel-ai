@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF2D20"/>
+      <stop offset="100%" stop-color="#E8453C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Full-bleed rounded square -->
+  <rect x="0" y="0" width="256" height="256" rx="56" ry="56" fill="#1a1a1a"/>
+
+  <!-- Bold prompt chevron -->
+  <polyline points="38,108 78,128 38,148" fill="none" stroke="white" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Big sparkle -->
+  <path d="M165,85 L176,120 L212,128 L176,136 L165,172 L154,136 L118,128 L154,120 Z" fill="url(#g2)"/>
+
+  <!-- Small accent sparkle -->
+  <path d="M210,72 L214,84 L226,88 L214,92 L210,104 L206,92 L194,88 L206,84 Z" fill="#FF2D20" opacity="0.55"/>
+</svg>
