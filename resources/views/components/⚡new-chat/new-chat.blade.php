@@ -12,7 +12,9 @@
         <div class="sticky bottom-0 w-full bg-white pb-4 dark:bg-zinc-800">
             <flux:composer wire:model="prompt" label="Prompt" label:sr-only placeholder="How can I help you today?">
                 <x-slot name="actionsLeading">
-                    <flux:button size="sm" variant="subtle" icon="paper-clip" />
+                    <!-- Todo: add file upload support -->
+                    {{-- <flux:button size="sm" variant="subtle" icon="paper-clip" /> --}}
+
                     {{-- <flux:button size="sm" variant="subtle" icon="slash" />
                     <flux:button size="sm" variant="subtle" icon="adjustments-horizontal" /> --}}
 
@@ -42,7 +44,9 @@
 
             <flux:composer wire:model="prompt" label="Prompt" label:sr-only placeholder="How can I help you today?">
                 <x-slot name="actionsLeading">
-                    <flux:button size="sm" variant="subtle" icon="paper-clip" />
+                    <!-- Todo: add file upload support -->
+                    {{-- <flux:button size="sm" variant="subtle" icon="paper-clip" /> --}}
+                    
                     {{-- <flux:button size="sm" variant="subtle" icon="slash" /> --}}
                     {{-- <flux:button size="sm" variant="subtle" icon="adjustments-horizontal" /> --}}
                     
