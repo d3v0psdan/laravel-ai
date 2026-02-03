@@ -2,6 +2,20 @@
 @import '../../vendor/livewire/flux/dist/flux.css';
 @import './loaders.css';
 
+@plugin '@tailwindcss/typography';
+
+/* Larger code block text */
+.prose pre,
+.prose code {
+    font-size: 0.925rem !important;
+    line-height: 1.6 !important;
+}
+
+.prose pre {
+    padding: 1rem !important;
+    border-radius: 0.5rem !important;
+}
+
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';

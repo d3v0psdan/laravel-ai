@@ -15,7 +15,7 @@
 
         {{-- Messages (scrollable) --}}
         <div class="flex-1 overflow-y-auto px-4">
-            <div class="mx-auto max-w-4xl flex flex-col gap-4 py-4 pb-8">
+            <div class="mx-auto max-w-3xl flex flex-col gap-2 py-4 pb-8">
                 @foreach ($context as $message)
                     @php
                         $role   = $message['role'];
@@ -24,15 +24,19 @@
                     @endphp
 
                     <div class="flex {{ $isUser ? 'justify-end' : 'justify-start' }}">
-                        <flux:card class="{{ $isUser ? 'max-w-xl' : 'max-w-3xl' }}">
-                            @if ($isUser)
-                                <div>{{ $message['content'] }}</div>
-                            @elseif ($isAI)
-                                <div class="prose dark:prose-invert max-w-none">
+                        @if ($isUser)
+                            {{-- User message: simple bubble --}}
+                            <div class="max-w-md rounded-2xl bg-zinc-200 px-4 py-2 text-sm dark:bg-zinc-700">
+                                {{ $message['content'] }}
+                            </div>
+                        @elseif ($isAI)
+                            {{-- AI message: subtle background --}}
+                            <div class="max-w-2xl rounded-2xl bg-white/60 px-4 py-3 text-sm dark:bg-zinc-800/60">
+                                <div class="prose prose-sm dark:prose-invert max-w-none">
                                     {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml($message['content']) !!}
                                 </div>
-                            @endif
-                        </flux:card>
+                            </div>
+                        @endif
                     </div>
                 @endforeach
             </div>
