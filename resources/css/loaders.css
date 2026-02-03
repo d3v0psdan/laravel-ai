@@ -1,0 +1,159 @@
+/* ===========================================
+   AI Chat Loaders
+   From: https://css-loaders.com/
+   =========================================== */
+
+/* The Hypnotic #3 */
+.loader-hypnotic {
+    width: 40px;
+    aspect-ratio: 1;
+    border: 2px solid currentColor;
+    --c: conic-gradient(from -90deg at calc(100% - 2px) calc(100% - 2px), #0000 0 90deg, currentColor 0);
+    background: var(--c), var(--c);
+    background-size: 12px 12px;
+    background-position: 0 0;
+    animation: loader-hypnotic 1s infinite;
+}
+
+@keyframes loader-hypnotic {
+    100% {
+        background-position: -12px -12px, 12px 12px;
+    }
+}
+
+/* The Square #11 */
+.loader-square {
+    width: 45px;
+    aspect-ratio: 1;
+    --g1: conic-gradient(from 90deg at top 3px left 3px, #0000 90deg, currentColor 0);
+    --g2: conic-gradient(from -90deg at bottom 3px right 3px, #0000 90deg, currentColor 0);
+    background:
+        var(--g1), var(--g1), var(--g1), var(--g1),
+        var(--g2), var(--g2), var(--g2), var(--g2);
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    animation: loader-square 1.5s infinite;
+}
+
+@keyframes loader-square {
+    0% { background-size: 35px 15px, 15px 15px, 15px 35px, 35px 35px; }
+    25% { background-size: 35px 35px, 15px 35px, 15px 15px, 35px 15px; }
+    50% { background-size: 15px 35px, 35px 35px, 35px 15px, 15px 15px; }
+    75% { background-size: 15px 15px, 35px 15px, 35px 35px, 15px 35px; }
+    100% { background-size: 35px 15px, 15px 15px, 15px 35px, 35px 35px; }
+}
+
+/* The Dancers #2 */
+.loader-dancers {
+    width: 32px;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+.loader-dancers::before,
+.loader-dancers::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -6px 0 0 -6px;
+    width: 12px;
+    aspect-ratio: 1;
+    background: var(--color-accent, #FF2D20);
+    animation:
+        loader-dancers-move 2s infinite,
+        loader-dancers-rotate 1s infinite;
+}
+
+.loader-dancers::after {
+    background: var(--color-accent-content, #FF6B61);
+    animation-delay: -1s, 0s;
+}
+
+@keyframes loader-dancers-move {
+    0% { top: 0; left: 0; }
+    25% { top: 100%; left: 0; }
+    50% { top: 100%; left: 100%; }
+    75% { top: 0; left: 100%; }
+    100% { top: 0; left: 0; }
+}
+
+@keyframes loader-dancers-rotate {
+    40%, 50% { transform: rotate(0.25turn) scale(0.5); }
+    100% { transform: rotate(0.5turn) scale(1); }
+}
+
+/* The Eyes #5 */
+.loader-eyes {
+    display: inline-flex;
+    gap: 8px;
+}
+
+.loader-eyes::before,
+.loader-eyes::after {
+    content: "";
+    height: 16px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(farthest-side, currentColor 95%, #0000) 35% 35% / 5px 5px no-repeat
+        var(--color-zinc-200);
+    animation: loader-eyes 3s infinite;
+}
+
+.dark .loader-eyes::before,
+.dark .loader-eyes::after {
+    background:
+        radial-gradient(farthest-side, currentColor 95%, #0000) 35% 35% / 5px 5px no-repeat
+        var(--color-zinc-700);
+}
+
+@keyframes loader-eyes {
+    0%, 11% { background-position: 35% 35%; }
+    14%, 36% { background-position: 65% 35%; }
+    38%, 61% { background-position: 65% 65%; }
+    64%, 86% { background-position: 35% 65%; }
+    88%, 100% { background-position: 35% 35%; }
+}
+
+/* The Blob #14 */
+.loader-blob {
+    height: 40px;
+    aspect-ratio: 2;
+    border: 8px solid currentColor;
+    box-sizing: border-box;
+    background:
+        radial-gradient(farthest-side, var(--color-accent, #FF2D20) 98%, #0000) left / 16px 16px,
+        radial-gradient(farthest-side, var(--color-accent, #FF2D20) 98%, #0000) left / 16px 16px,
+        radial-gradient(farthest-side, var(--color-accent, #FF2D20) 98%, #0000) center / 16px 16px,
+        radial-gradient(farthest-side, var(--color-accent, #FF2D20) 98%, #0000) right / 16px 16px,
+        currentColor;
+    background-repeat: no-repeat;
+    filter: blur(4px) contrast(10);
+    animation: loader-blob 1s infinite;
+}
+
+@keyframes loader-blob {
+    100% { background-position: right, left, center, right; }
+}
+
+/* The Blob #18 */
+.loader-blob-alt {
+    width: 60px;
+    aspect-ratio: 1;
+    border: 8px solid currentColor;
+    box-sizing: border-box;
+    background:
+        radial-gradient(farthest-side at right, var(--color-accent, #FF2D20) 98%, #0000) 20% 50% / 40% 80%,
+        radial-gradient(farthest-side at left, var(--color-accent, #FF2D20) 98%, #0000) 80% 50% / 40% 80%,
+        currentColor;
+    background-repeat: no-repeat;
+    filter: blur(4px) contrast(10);
+    animation: loader-blob-alt 0.8s infinite alternate;
+}
+
+@keyframes loader-blob-alt {
+    0%, 20% { background-position: 20% 50%, 80% 50%; }
+    100% { background-position: 80% 50%, 20% 50%; }
+}

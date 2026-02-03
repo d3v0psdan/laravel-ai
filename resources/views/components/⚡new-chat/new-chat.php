@@ -6,11 +6,11 @@ use Livewire\Attributes\Computed;
 
 new #[Title('New Chat')] class extends Component
 {
-    public string $prompt = '';
+    public string $prompt = 'Hello Artificial Intelligence!';
 
     public $selectedModel = '';
 
-    public bool $hasMessages = false;
+    public bool $hasSentMessage = true;
 
     public function mount(): void
     {
@@ -38,4 +38,25 @@ new #[Title('New Chat')] class extends Component
         - Real-time streaming responses
         - Multiple AI providers via **Prism**
     EOF;
+
+    /**
+     * Send a message to the AI model.
+     *
+     * @return void
+     */
+    public function submitMessage(): void
+    {
+        // Do we have a valid message? 
+        if (empty($this->prompt))
+        {
+            $this->addError('promptError', 'You must specify a message to send.');
+            return;
+        }
+        
+        if (!$this->hasSentMessage)
+            $this->hasSentMessage = true;
+
+        // Reset the prompt
+        $this->prompt = '';
+    }
 };
